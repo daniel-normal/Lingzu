@@ -10,7 +10,7 @@ namespace Lingzu.Models
     {
         //PROPIEDADES DEL MODELO CLIENTE
         public int ClienteId { get; set; }
-
+        //VALIDACIONES DE LA PROPIEDAD APELLIDO PATERNO
         [Display(Name = "Apellido Paterno")]
         [RegularExpression(@"^[A-Z]+[a-zA-Z\s]*$")]
         [StringLength(35, MinimumLength = 1)]
