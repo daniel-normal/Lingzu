@@ -8,6 +8,7 @@ namespace Lingzu.Models
 {
     public class Cliente
     {
+        //PROPIEDADES DEL MODELO CLIENTE
         public int ClienteId { get; set; }
 
         [Display(Name = "Apellido Paterno")]
