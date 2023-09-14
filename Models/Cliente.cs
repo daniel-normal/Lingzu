@@ -16,7 +16,7 @@ namespace Lingzu.Models
         [StringLength(35, MinimumLength = 1)]
         [Required]
         public string ApellidoP { get; set; } = string.Empty;
-
+        //VALIDACIONES DE LA PROPIEDAD APELLIDO MATERNO
         [Display(Name = "Apellido Materno")]
         [RegularExpression(@"^[A-Z]+[a-zA-Z\s]*$")]
         [StringLength(35, MinimumLength = 1)]
