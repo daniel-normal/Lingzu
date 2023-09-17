@@ -14,7 +14,8 @@ html {
 }
 
 body {
-  margin-bottom: 60px;
+    margin-bottom: 60px;
+    background-color: #AAB7B8;
 }
 
 /*Cambios Nuevos*/
@@ -31,13 +32,6 @@ body {
         font-size: 3.5rem;
     }
 }
-
-
-
-
-
-
-
 
 
 
@@ -90,4 +84,32 @@ section img {
     height: 100%;
     object-fit: cover; /* ajusta el tamaño de la imagen */
     border-radius: 100%; 
+}
+.TituloContactos {
+    text-align: center; /* Centro el texto */
+    color: #E67E22; /* Color de texto negro oscuro */
+    font-size: 100px; /* Tamaño de fuente medio */
+    font-family:Impact;
+    /* Tipo de fuente Tahoma */
+}
+.Tablita {
+    text-align: center; /* Centro el texto */
+    color: #5D6D7E; /* Color de texto negro oscuro */
+    font-size: 30px; /* Tamaño de fuente medio */
+    font-family: Barlow;
+    /* Tipo de fuente Tahoma */
+}
+.Contact {
+    margin-bottom: 60px;
+    background-color: #FEF5E7;
+}
+/* site.css */
+
+.imagen-gruesa {
+    width: 100%; /* Ajusta el ancho de la imagen al 100% del contenedor */
+    height: auto; /* Permite que la altura se ajuste automáticamente para mantener la relación de aspecto */
+    max-width: 100%; /* Asegura que la imagen no supere el ancho del contenedor */
+    max-height: 800px; /* Establece una altura máxima para las imágenes */
+    display: block; /* Evita espacios en blanco debajo de las imágenes */
+    margin-bottom: 50px; /* Agrega un margen inferior para separar las imágenes de la tabla */
 }
