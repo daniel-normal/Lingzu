@@ -2,38 +2,47 @@
 @model Lingzu.Pages.Ventas.CreateModel
 
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = "Crear Venta";
 }
 
-<h1>Create</h1>
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <div class="card rounded shadow">
+                <div class="card-header bg-dark text-light text-center">
+                    <h3 class="mb-0">
+                        <i class="fas fa-shopping-cart"></i> Registrar Venta
+                    </h3>
+                </div>
+                <div class="card-body">
+                    <form method="post">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <div class="form-group">
+                            <label asp-for="Venta.Fecha" class="font-weight-bold">Fecha</label>
+                            <input asp-for="Venta.Fecha" class="form-control" />
+                            <span asp-validation-for="Venta.Fecha" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Venta.NumeroVenta" class="font-weight-bold">Número de Factura</label>
+                            <input asp-for="Venta.NumeroVenta" class="form-control" />
+                            <span asp-validation-for="Venta.NumeroVenta" class="text-danger"></span>
+                        </div>
 
-<h4>Venta</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form method="post">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="Venta.Fecha" class="control-label"></label>
-                <input asp-for="Venta.Fecha" class="form-control" />
-                <span asp-validation-for="Venta.Fecha" class="text-danger"></span>
+                        <div class="form-group mt-2">
+                            <button type="submit" class="btn btn-primary ml-2 w-100">Registrar Venta</button>
+                        </div>
+                        <div class="form-group mt-2">
+                            <a asp-page="Index" class="btn btn-secondary ml-2 w-100">Volver a la Lista</a>
+                        </div>
+                    </form>
+                </div>
             </div>
-            <div class="form-group">
-                <label asp-for="Venta.NumeroVenta" class="control-label"></label>
-                <input asp-for="Venta.NumeroVenta" class="form-control" />
-                <span asp-validation-for="Venta.NumeroVenta" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
-            </div>
-        </form>
+        </div>
     </div>
 </div>
 
-<div>
-    <a asp-page="Index">Back to List</a>
-</div>
-
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }
