@@ -5,35 +5,49 @@
     ViewData["Title"] = "Edit";
 }
 
-<h1>Edit</h1>
+<h1>Edit</h1>  <!-- Encabezado principal -->
 
-<h4>Cliente</h4>
-<hr />
+<h4>Cliente</h4>  <!-- Encabezado para la sección de cliente -->
+<hr />  <!-- Línea horizontal para separar visualmente -->
+
 <div class="row">
     <div class="col-md-4">
         <form method="post">
+            <!-- Mostrar errores de validación -->
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <!-- Campo oculto para almacenar el ClienteId -->
             <input type="hidden" asp-for="Cliente.ClienteId" />
+
+            <!-- Editar Apellido Paterno -->
             <div class="form-group">
                 <label asp-for="Cliente.ApellidoP" class="control-label"></label>
                 <input asp-for="Cliente.ApellidoP" class="form-control" />
                 <span asp-validation-for="Cliente.ApellidoP" class="text-danger"></span>
             </div>
+
+            <!-- Editar Apellido Materno -->
             <div class="form-group">
                 <label asp-for="Cliente.ApellidoM" class="control-label"></label>
                 <input asp-for="Cliente.ApellidoM" class="form-control" />
                 <span asp-validation-for="Cliente.ApellidoM" class="text-danger"></span>
             </div>
+
+            <!-- Editar Nombre -->
             <div class="form-group">
                 <label asp-for="Cliente.Nombre" class="control-label"></label>
                 <input asp-for="Cliente.Nombre" class="form-control" />
                 <span asp-validation-for="Cliente.Nombre" class="text-danger"></span>
             </div>
+
+            <!-- Editar NIT -->
             <div class="form-group">
                 <label asp-for="Cliente.Nit" class="control-label"></label>
                 <input asp-for="Cliente.Nit" class="form-control" />
                 <span asp-validation-for="Cliente.Nit" class="text-danger"></span>
             </div>
+
+            <!-- Botón para guardar cambios -->
             <div class="form-group">
                 <input type="submit" value="Save" class="btn btn-primary" />
             </div>
@@ -42,6 +56,7 @@
 </div>
 
 <div>
+    <!-- Enlace para volver a la lista de clientes -->
     <a asp-page="./Index">Back to List</a>
 </div>
 
