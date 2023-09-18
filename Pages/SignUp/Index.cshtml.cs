@@ -7,14 +7,13 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Lingzu.Data;
 using Lingzu.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace Lingzu.Pages.SignUp
 {
     public class SignUpModel : PageModel
     {
         private readonly LingzuContext _context;
-
-        public int IdClienteRegistrado { get; set; }
 
         public SignUpModel(LingzuContext context)
         {
@@ -28,7 +27,6 @@ namespace Lingzu.Pages.SignUp
 
         [BindProperty]
         public Cliente Cliente { get; set; } = default!;
-
         public bool RegistrationSuccessful { get; set; } = false;
 
         public async Task<IActionResult> OnPostAsync()
@@ -41,12 +39,21 @@ namespace Lingzu.Pages.SignUp
             _context.Cliente.Add(Cliente);
             await _context.SaveChangesAsync();
 
-            RegistrationSuccessful = true; // Establecer como exitoso
+            RegistrationSuccessful = true;
 
-            // Después de guardar el cliente, obtén su ID desde la base de datos
-            IdClienteRegistrado = Cliente.ClienteId; // Suponiendo que 'ClienteId' es la propiedad que almacena el ID del cliente
+            // Obtener el ClienteId después de guardar el cliente
+            var clienteGuardado = await _context.Cliente.SingleOrDefaultAsync(c => c.Nit == Cliente.Nit);
 
-            return RedirectToPage("./Carrito", new { idClienteRegistrado = IdClienteRegistrado });
+            if (clienteGuardado != null)
+            {
+                // Redirigir a la página "Carrito" con el ClienteId como parámetro de consulta
+                return RedirectToPage("./Carrito", new { ClienteId = clienteGuardado.ClienteId });
+            }
+            else
+            {
+                return Page();
+            }
         }
+
     }
 }

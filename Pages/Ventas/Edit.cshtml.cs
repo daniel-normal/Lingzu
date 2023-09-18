@@ -36,6 +36,7 @@ namespace Lingzu.Pages.Ventas
                 return NotFound();
             }
             Venta = venta;
+           ViewData["ClienteId"] = new SelectList(_context.Cliente, "ClienteId", "ApellidoM");
             return Page();
         }
 

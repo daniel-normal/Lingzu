@@ -25,7 +25,8 @@ namespace Lingzu.Pages.Ventas
         {
             if (_context.Venta != null)
             {
-                Venta = await _context.Venta.ToListAsync();
+                Venta = await _context.Venta
+                .Include(v => v.Cliente).ToListAsync();
             }
         }
     }

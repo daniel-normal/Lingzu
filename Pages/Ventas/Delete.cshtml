@@ -26,6 +26,14 @@
                         <dd class="col-sm-12 mb-4">
                             <b>Número de Factura:</b> @Html.DisplayFor(model => model.Venta.NumeroVenta)
                         </dd>
+
+                        <dt class="col-sm-2">
+                            @Html.DisplayNameFor(model => model.Venta.Cliente)
+                        </dt>
+                        <dd class="col-sm-10">
+                            @Html.DisplayFor(model => model.Venta.Cliente.ApellidoM)
+                        </dd>
+
                     </dl>
                 </div>
                 <div class="card-footer text-center">
@@ -43,3 +51,9 @@
         </div>
     </div>
 </div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

@@ -22,6 +22,9 @@
                         <th>
                             @Html.DisplayNameFor(model => model.Venta[0].NumeroVenta)
                         </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Venta[0].Cliente)
+                        </th>
                         <th>Acciones</th>
                     </tr>
                 </thead>
@@ -34,6 +37,9 @@
                             </td>
                             <td>
                                 @Html.DisplayFor(modelItem => item.NumeroVenta)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Cliente.ApellidoM)
                             </td>
                             <td>
                                 <a asp-page="./Edit" asp-route-id="@item.VentaId" class="btn btn-sm btn-info"><i class="fas fa-edit"></i> Editar</a> |
@@ -50,3 +56,9 @@
         </div>
     </div>
 </div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

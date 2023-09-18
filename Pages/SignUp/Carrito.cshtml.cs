@@ -1,6 +1,9 @@
 ﻿using Lingzu.Models;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace Lingzu.Pages.SignUp
 {
@@ -20,46 +23,48 @@ namespace Lingzu.Pages.SignUp
             public int PrecioProducto { get; set; }
         }
 
+        [BindProperty]
         public List<ProductoViewModel> Productos { get; set; } // Lista de productos
 
         // Definir la propiedad IdClienteRegistrado
         public int IdClienteRegistrado { get; set; }
 
-        public IActionResult OnGet(int? idClienteRegistrado)
+        public IActionResult OnGet(int? ClienteId)
         {
-            if (idClienteRegistrado == null)
+            if (ClienteId == null)
             {
                 return NotFound();
             }
-            IdClienteRegistrado = idClienteRegistrado.Value;
+
+            IdClienteRegistrado = ClienteId.Value;
 
             Productos = _context.Producto.Select(p => new ProductoViewModel
             {
                 Value = p.ProductoId.ToString(),
                 Text = p.NombreProducto,
-                PrecioProducto = (int)p.PrecioProducto // Convertir el precio a entero
+                PrecioProducto = (int)p.PrecioProducto
             }).ToList();
 
             return Page();
         }
 
+
         [BindProperty]
         public int ProductoIdSeleccionado { get; set; } // Propiedad para almacenar el ID del producto seleccionado.
 
         [BindProperty]
-        public Producto Producto { get; set; } = default!;
+        public Producto Producto { get; set; } = new Producto();
 
-        public async Task<IActionResult> OnPostAsync()
+        public IActionResult OnPostAsync()
         {
-            if (!ModelState.IsValid || _context.Producto == null || Producto == null)
+            // Redirigir a la página "DetalleFactura" con valores en la URL
+            return RedirectToPage("./DetalleFactura", new
             {
-                return Page();
-            }
-
-            _context.Producto.Add(Producto);
-            await _context.SaveChangesAsync();
-
-            return RedirectToPage("./DetalleFactura", new { idClienteRegistrado = IdClienteRegistrado });
+                idClienteRegistrado = IdClienteRegistrado,
+                nombreProducto = Producto.NombreProducto,
+                precioProducto = Producto.PrecioProducto,
+                cantidadProducto = Producto.CantidadProducto
+            });
         }
     }
 }

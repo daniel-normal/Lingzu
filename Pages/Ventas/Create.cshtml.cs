@@ -21,6 +21,7 @@ namespace Lingzu.Pages.Ventas
 
         public IActionResult OnGet()
         {
+        ViewData["ClienteId"] = new SelectList(_context.Cliente, "ClienteId", "ApellidoM");
             return Page();
         }
 

@@ -43,12 +43,20 @@
                             <label for="Producto.CantidadProducto" class="font-weight-bold mb-2">
                                 <i class="fas fa-shopping-basket fa-icon-space"></i> Cantidad
                             </label>
-                            <input class="form-control" />
+                            <input asp-for="Producto.CantidadProducto" class="form-control" />
                             <span asp-validation-for="Producto.CantidadProducto" class="text-danger"></span>
                         </div>
 
+                        <!-- Agregar campos ocultos -->
+                        <input type="hidden" asp-for="IdClienteRegistrado" />
+                        <input type="hidden" asp-for="Producto.NombreProducto" id="Producto_NombreProducto" />
+                        <input type="hidden" asp-for="Producto.PrecioProducto" />
+                        <!-- El campo de cantidad del producto se enviará automáticamente -->
+
                         <div class="card-footer text-center mt-2">
-                            <a asp-page="DetalleFactura" class="btn btn-secondary"><i class="fas fa-arrow-right fa-icon-space"></i> Siguiente</a>
+                            <button type="submit" class="btn btn-secondary">
+                                <i class="fas fa-arrow-right fa-icon-space"></i> Siguiente
+                            </button>
                         </div>
                     </form>
                 </div>
@@ -61,9 +69,16 @@
     function actualizarPrecio() {
         var select = document.getElementById("ProductoIdSeleccionado");
         var precio = select.options[select.selectedIndex].getAttribute("data-precio");
+        var nombreProducto = select.options[select.selectedIndex].text; // Obtén el nombre del producto seleccionado
         var precioInput = document.getElementById("Producto_PrecioProducto");
+        var nombreProductoInput = document.getElementById("Producto_NombreProducto");
+
         if (precioInput) {
             precioInput.value = precio;
+        }
+
+        if (nombreProductoInput) {
+            nombreProductoInput.value = nombreProducto; // Actualiza el valor del campo oculto del nombre del producto
         }
     }
 </script>

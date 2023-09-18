@@ -31,6 +31,12 @@
                             <span asp-validation-for="Venta.NumeroVenta" class="text-danger"></span>
                         </div>
 
+                        <div class="form-group">
+                            <label asp-for="Venta.ClienteId" class="control-label"></label>
+                            <select asp-for="Venta.ClienteId" class="form-control" asp-items="ViewBag.ClienteId"></select>
+                            <span asp-validation-for="Venta.ClienteId" class="text-danger"></span>
+                        </div>
+
                         <div class="card-footer text-center">
                             <button type="submit" class="btn btn-warning">
                                 <i class="fas fa-check"></i> Actualizar
@@ -40,7 +46,7 @@
                             </a>
                         </div>
                     </form>
-                </div>               
+                </div>
             </div>
         </div>
     </div>

@@ -18,65 +18,36 @@ namespace Lingzu.Pages.SignUp
         {
             _context = context;
         }
+        [BindProperty(SupportsGet = true)]
+        public int idClienteRegistrado { get; set; }
 
-        // Definir la propiedad IdClienteRegistrado
-        public int IdClienteRegistrado { get; set; }
+        [BindProperty(SupportsGet = true)]
+        public string nombreProducto { get; set; }
 
-        public IActionResult OnGet(int? idClienteRegistrado)
+        [BindProperty(SupportsGet = true)]
+        public int precioProducto { get; set; }
+
+        [BindProperty(SupportsGet = true)]
+        public int cantidadProducto { get; set; }
+
+
+        public IActionResult OnGet()
         {
-            if (idClienteRegistrado == null)
-            {
-                return NotFound();
-            }
-            IdClienteRegistrado = idClienteRegistrado.Value;
-
+            // Resto de tu código
             return Page();
         }
 
         [BindProperty]
-        public Venta Venta { get; set; } = default!;
+        public Venta Venta { get; set; } = new Venta();
 
-
-        // To protect from overposting attacks, see https://aka.ms/RazorPagesCRUD
         public async Task<IActionResult> OnPostAsync()
         {
-            // Agrega un registro de depuración
-            Console.WriteLine("OnPostAsync() ejecutado");
-
-            if (!ModelState.IsValid || _context.Venta == null || Venta == null)
-            {
-                return Page();
-            }
+            // Aquí puedes guardar la venta en tu base de datos, utilizando la propiedad Venta
 
             _context.Venta.Add(Venta);
             await _context.SaveChangesAsync();
 
             return RedirectToPage("./Index");
         }
-
-
-        public IActionResult OnPost()
-        {
-            // Agrega un registro de depuración
-            Console.WriteLine("OnPost() ejecutado");
-
-            if (!ModelState.IsValid)
-            {
-                return Page();
-            }
-
-            var venta = new Venta
-            {
-                Fecha = Venta.Fecha,
-                NumeroVenta = Venta.NumeroVenta,
-                ClienteId = IdClienteRegistrado
-            };
-
-            _context.Venta.Add(venta);
-            _context.SaveChanges();
-
-            return RedirectToPage("./Index");
-        }
-
     }
 }
