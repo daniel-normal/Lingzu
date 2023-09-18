@@ -5,14 +5,17 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
+<h1>Index</h1>  <!-- Encabezado principal -->
 
 <p>
-    <a asp-page="Create">Create New</a>
+    <a asp-page="Create">Create New</a>  <!-- Enlace para crear un nuevo cliente -->
 </p>
+
+<!-- Tabla para mostrar la lista de clientes -->
 <table class="table">
     <thead>
         <tr>
+            <!-- Encabezados de las columnas -->
             <th>
                 @Html.DisplayNameFor(model => model.Cliente[0].ApellidoP)
             </th>
@@ -25,30 +28,34 @@
             <th>
                 @Html.DisplayNameFor(model => model.Cliente[0].Nit)
             </th>
-            <th></th>
+            <th></th> <!-- Columna adicional para acciones -->
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model.Cliente) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.ApellidoP)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ApellidoM)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Nombre)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Nit)
-            </td>
-            <td>
-                <a asp-page="./Edit" asp-route-id="@item.ClienteId">Edit</a> |
-                <a asp-page="./Details" asp-route-id="@item.ClienteId">Details</a> |
-                <a asp-page="./Delete" asp-route-id="@item.ClienteId">Delete</a>
-            </td>
-        </tr>
-}
+        <!-- Iterar a través de la lista de clientes y mostrarlos en la tabla -->
+        @foreach (var item in Model.Cliente)
+        {
+            <tr>
+                <!-- Mostrar detalles del cliente -->
+                <td>
+                    @Html.DisplayFor(modelItem => item.ApellidoP)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ApellidoM)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nombre)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nit)
+                </td>
+                <td>
+                    <!-- Enlaces para editar, ver detalles y eliminar el cliente -->
+                    <a asp-page="./Edit" asp-route-id="@item.ClienteId">Edit</a> |
+                    <a asp-page="./Details" asp-route-id="@item.ClienteId">Details</a> |
+                    <a asp-page="./Delete" asp-route-id="@item.ClienteId">Delete</a>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>
