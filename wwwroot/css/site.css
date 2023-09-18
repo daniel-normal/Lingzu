@@ -113,3 +113,29 @@ section img {
     display: block; /* Evita espacios en blanco debajo de las imágenes */
     margin-bottom: 50px; /* Agrega un margen inferior para separar las imágenes de la tabla */
 }
+/* Estilos para la galería */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columnas */
+    gap: 20px; /* Espacio entre las tarjetas de producto */
+}
+
+.gallery-item {
+    border: 1px solid #ccc;
+    padding: 20px;
+    text-align: center;
+}
+
+    .gallery-item img {
+        max-width: 100%;
+        height: auto;
+    }
+/* Estilos CSS para la clase "mi-imagen" */
+.mi-imagen {
+    width: 1600px; /* Ancho deseado */
+    height: auto; /* Mantén la proporción original */
+    border: 5px solid blue; /* Grosor y color del borde */
+    max-width: 100%; /* Asegura que la imagen no supere el ancho del contenedor */
+    max-height: 500px;
+    margin-bottom: 50px;
+}
