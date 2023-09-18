@@ -5,30 +5,38 @@
     ViewData["Title"] = "Details";
 }
 
-<h1>Details</h1>
+<h1>Details</h1>  <!-- Encabezado principal -->
 
 <div>
-    <h4>Cliente</h4>
-    <hr />
+    <h4>Cliente</h4>  <!-- Encabezado para la sección de cliente -->
+    <hr />  <!-- Línea horizontal para separar visualmente -->
+
     <dl class="row">
+        <!-- Mostrar el Apellido Paterno del Cliente -->
         <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Cliente.ApellidoP)
         </dt>
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Cliente.ApellidoP)
         </dd>
+
+        <!-- Mostrar el Apellido Materno del Cliente -->
         <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Cliente.ApellidoM)
         </dt>
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Cliente.ApellidoM)
         </dd>
+
+        <!-- Mostrar el Nombre del Cliente -->
         <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Cliente.Nombre)
         </dt>
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Cliente.Nombre)
         </dd>
+
+        <!-- Mostrar el NIT del Cliente -->
         <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Cliente.Nit)
         </dt>
@@ -37,7 +45,11 @@
         </dd>
     </dl>
 </div>
+
 <div>
+    <!-- Enlace para editar el cliente -->
     <a asp-page="./Edit" asp-route-id="@Model.Cliente?.ClienteId">Edit</a> |
+
+    <!-- Enlace para volver a la lista de clientes -->
     <a asp-page="./Index">Back to List</a>
 </div>
