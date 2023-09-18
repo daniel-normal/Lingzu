@@ -1,0 +1,86 @@
+﻿@page
+@model Lingzu.Pages.SignUp.SignUpModel
+
+@{
+    ViewData["Title"] = "SignUp";
+}
+
+@if (Model.RegistrationSuccessful)
+{
+    <div class="alert alert-success text-center" style="margin-top: 18px; margin-right: 10px; margin-left: 10px;" role="alert">
+        <strong>¡Registrado!</strong> Se ha registrado al cliente exitosamente.
+    </div>
+}
+else
+{
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+}
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card shadow rounded">
+                <div class="card-header bg-primary text-light text-center p-4">
+                    <h3><i class="fas fa-user"></i> Datos Personales </h3>
+                </div>
+                <div class="card-body">
+                    <form method="post">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                        <div class="form-group mb-4">
+                            <label for="ApellidoP" class="font-weight-bold mb-2">
+                                <i class="fas fa-user fa-icon-space"></i> Apellido Paterno
+                            </label>
+                            <input asp-for="Cliente.ApellidoP" class="form-control" />
+                            <span asp-validation-for="Cliente.ApellidoP" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group mb-4">
+                            <label for="ApellidoM" class="font-weight-bold mb-2">
+                                <i class="fas fa-user fa-icon-space"></i> Apellido Materno
+                            </label>
+                            <input asp-for="Cliente.ApellidoM" class="form-control" />
+                            <span asp-validation-for="Cliente.ApellidoM" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group mb-4">
+                            <label for="Nombre" class="font-weight-bold mb-2">
+                                <i class="fas fa-user fa-icon-space"></i> Nombre
+                            </label>
+                            <input asp-for="Cliente.Nombre" class="form-control" />
+                            <span asp-validation-for="Cliente.Nombre" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="Nit" class="font-weight-bold mb-2">
+                                <i class="fas fa-id-card fa-icon-space"></i> NIT
+                            </label>
+                            <input asp-for="Cliente.Nit" class="form-control" />
+                            <span asp-validation-for="Cliente.Nit" class="text-danger"></span>
+                        </div>
+
+                        <div class="card-footer text-center mt-2">
+                            <button type="submit" class="btn btn-primary" id="registerButton">
+                                <i class="fas fa-user-plus fa-wrench"></i> Registrarse
+                            </button>
+
+                            @if (Model.RegistrationSuccessful)
+                            {
+                                <a asp-page="Carrito" class="btn btn-secondary">
+                                    <i class="fas fa-arrow-right fa-icon-space"></i> Siguiente
+                                </a>
+                            }                          
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
+

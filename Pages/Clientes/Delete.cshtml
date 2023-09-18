@@ -5,42 +5,45 @@
     ViewData["Title"] = "Delete";
 }
 
-<h1>Delete</h1>
-
-<h3>Are you sure you want to delete this?</h3>
-<div>
-    <h4>Cliente</h4>
-    <hr />
-    <dl class="row">
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Cliente.ApellidoP)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Cliente.ApellidoP)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Cliente.ApellidoM)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Cliente.ApellidoM)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Cliente.Nombre)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Cliente.Nombre)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Cliente.Nit)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Cliente.Nit)
-        </dd>
-    </dl>
-    
-    <form method="post">
-        <input type="hidden" asp-for="Cliente.ClienteId" />
-        <input type="submit" value="Delete" class="btn btn-danger" /> |
-        <a asp-page="./Index">Back to List</a>
-    </form>
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <div class="card rounded shadow">
+                <div class="card-header bg-dark text-light text-center">
+                    <h3 class="mb-0">
+                        <i class="fas fa-trash"></i> Borrar Cliente
+                    </h3>
+                </div>
+                <div class="card-body">
+                    <h4 class="card-title">Cliente</h4>
+                    <hr />
+                    <dl class="row">
+                        <dd class="col-sm-12 mb-4">
+                            <b>Apellido Paterno:</b> @Model.Cliente.ApellidoP
+                        </dd>
+                        <dd class="col-sm-12 mb-4">
+                            <b>Apellido Materno:</b> @Model.Cliente.ApellidoM
+                        </dd>
+                        <dd class="col-sm-12 mb-4">
+                            <b>Nombre:</b> @Model.Cliente.Nombre
+                        </dd>
+                        <dd class="col-sm-12 mb-4">
+                            <b>NIT:</b> @Model.Cliente.Nit
+                        </dd>
+                    </dl>
+                </div>
+                <div class="card-footer text-center">
+                    <form method="post">
+                        <input type="hidden" asp-for="Cliente.ClienteId" />
+                        <button type="submit" class="btn btn-danger">
+                            <i class="fas fa-trash"></i> Eliminar
+                        </button>
+                        <a asp-page="./Index" class="btn btn-secondary">
+                            <i class="fas fa-arrow-left"></i> Volver a la Lista
+                        </a>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

@@ -5,27 +5,36 @@
     ViewData["Title"] = "Details";
 }
 
-<h1>Details</h1>
-
-<div>
-    <h4>Venta</h4>
-    <hr />
-    <dl class="row">
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Venta.Fecha)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Venta.Fecha)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Venta.NumeroVenta)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Venta.NumeroVenta)
-        </dd>
-    </dl>
-</div>
-<div>
-    <a asp-page="./Edit" asp-route-id="@Model.Venta?.VentaId">Edit</a> |
-    <a asp-page="./Index">Back to List</a>
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <div class="card rounded shadow">
+                <div class="card-header bg-dark text-light text-center">
+                    <h3 class="mb-0">
+                        <i class="fas fa-info-circle"></i> Detalles de Venta
+                    </h3>
+                </div>
+                <div class="card-body">
+                    <h4 class="card-title">Venta</h4>
+                    <hr />
+                    <dl class="row">
+                        <dd class="col-sm-12 mb-4">
+                            <b>Fecha:</b> @Html.DisplayFor(model => model.Venta.Fecha)
+                        </dd>
+                        <dd class="col-sm-12 mb-4">
+                            <b>Número de Factura:</b> @Html.DisplayFor(model => model.Venta.NumeroVenta)
+                        </dd>
+                    </dl>
+                </div>
+                <div class="card-footer text-center">
+                    <a asp-page="./Edit" asp-route-id="@Model.Venta?.VentaId" class="btn btn-primary">
+                        <i class="fas fa-edit"></i> Editar
+                    </a>
+                    <a asp-page="./Index" class="btn btn-secondary">
+                        <i class="fas fa-arrow-left"></i> Volver a la Lista
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

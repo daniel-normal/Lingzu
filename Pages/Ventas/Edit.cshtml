@@ -5,36 +5,49 @@
     ViewData["Title"] = "Edit";
 }
 
-<h1>Edit</h1>
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <div class="card rounded shadow">
+                <div class="card-header bg-dark text-light text-center">
+                    <h3 class="mb-0">
+                        <i class="fas fa-edit"></i> Actualizar Venta
+                    </h3>
+                </div>
+                <div class="card-body">
+                    <h4 class="card-title">Venta</h4>
+                    <hr />
+                    <form method="post">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <input type="hidden" asp-for="Venta.VentaId" />
+                        <div class="form-group">
+                            <label asp-for="Venta.Fecha" class="font-weight-bold">Fecha</label>
+                            <input asp-for="Venta.Fecha" class="form-control" />
+                            <span asp-validation-for="Venta.Fecha" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Venta.NumeroVenta" class="font-weight-bold">Número de Venta</label>
+                            <input asp-for="Venta.NumeroVenta" class="form-control" />
+                            <span asp-validation-for="Venta.NumeroVenta" class="text-danger"></span>
+                        </div>
 
-<h4>Venta</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form method="post">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="Venta.VentaId" />
-            <div class="form-group">
-                <label asp-for="Venta.Fecha" class="control-label"></label>
-                <input asp-for="Venta.Fecha" class="form-control" />
-                <span asp-validation-for="Venta.Fecha" class="text-danger"></span>
+                        <div class="card-footer text-center">
+                            <button type="submit" class="btn btn-warning">
+                                <i class="fas fa-check"></i> Actualizar
+                            </button>
+                            <a asp-page="./Index" class="btn btn-secondary">
+                                <i class="fas fa-arrow-left"></i> Volver a la Lista
+                            </a>
+                        </div>
+                    </form>
+                </div>               
             </div>
-            <div class="form-group">
-                <label asp-for="Venta.NumeroVenta" class="control-label"></label>
-                <input asp-for="Venta.NumeroVenta" class="form-control" />
-                <span asp-validation-for="Venta.NumeroVenta" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
-            </div>
-        </form>
+        </div>
     </div>
 </div>
 
-<div>
-    <a asp-page="./Index">Back to List</a>
-</div>
-
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }

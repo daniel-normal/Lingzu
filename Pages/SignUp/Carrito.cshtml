@@ -1,0 +1,76 @@
+﻿@page
+@model Lingzu.Pages.SignUp.CarritoModel
+
+@{
+    ViewData["Title"] = "Carrito";
+}
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card shadow rounded">
+                <div class="card-header bg-primary text-light text-center p-4">
+                    <h3><i class="fas fa-shopping-cart"></i> Agregar Producto</h3>
+                </div>
+                <div class="card-body">
+                    <form method="post">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                        <div class="form-group mb-4">
+                            <label for="ProductoIdSeleccionado" class="font-weight-bold mb-2">
+                                <i class="fas fa-tag fa-icon-space"></i> Nombre del Producto
+                            </label>
+                            <select asp-for="ProductoIdSeleccionado" class="form-control" id="ProductoIdSeleccionado" onchange="actualizarPrecio()">
+                                <option value="">Seleccionar Producto</option>
+                                @foreach (var producto in Model.Productos)
+                                {
+                                    <option value="@producto.Value" data-precio="@producto.PrecioProducto">@producto.Text</option>
+                                }
+                            </select>
+
+                            <span asp-validation-for="ProductoIdSeleccionado" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group mb-4">
+                            <label for="Producto.PrecioProducto" class="font-weight-bold mb-2">
+                                <i class="fas fa-dollar-sign fa-icon-space"></i> Precio Unitario del Producto
+                            </label>
+                            <input asp-for="Producto.PrecioProducto" class="form-control" readonly id="Producto_PrecioProducto" />
+                            <span asp-validation-for="Producto.PrecioProducto" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group mb-4">
+                            <label for="Producto.CantidadProducto" class="font-weight-bold mb-2">
+                                <i class="fas fa-shopping-basket fa-icon-space"></i> Cantidad
+                            </label>
+                            <input class="form-control" />
+                            <span asp-validation-for="Producto.CantidadProducto" class="text-danger"></span>
+                        </div>
+
+                        <div class="card-footer text-center mt-2">
+                            <a asp-page="DetalleFactura" class="btn btn-secondary"><i class="fas fa-arrow-right fa-icon-space"></i> Siguiente</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function actualizarPrecio() {
+        var select = document.getElementById("ProductoIdSeleccionado");
+        var precio = select.options[select.selectedIndex].getAttribute("data-precio");
+        var precioInput = document.getElementById("Producto_PrecioProducto");
+        if (precioInput) {
+            precioInput.value = precio;
+        }
+    }
+</script>
+
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

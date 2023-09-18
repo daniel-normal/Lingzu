@@ -13,7 +13,6 @@
     <div class="carousel-inner">
         <div class="carousel-item active">
             <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777" /></svg>
-
             <div class="container">
                 <div class="carousel-caption text-start">
                     <h1>NUEVOS LANZAMIENTOS</h1>
@@ -21,7 +20,7 @@
                     <section class="seccion1">
                         <img src="~/img/nube.jpg" />
                         <img src="~/img/jor.jpg" />
-                        <img src="~/img/naraja.jpg" />
+                        <img src="~/img/naranja.jpg" />
                         <img src="~/img/white.jpg" />
                     </section>
                     <a class="btn btn-lg btn-primary" href="#">¡COMPRA YA!</a>
@@ -29,15 +28,12 @@
             </div>
         </div>
         <div class="carousel-item">
-            <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777" /></svg>
-
+            <svg  width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777" /></svg>
             <div class="container">
                 <div class="carousel-caption">
                     <img class="circulo" src="~/img/descuento.png" />
-                    <h1>Disfruta de nuestros descuentos por este Septiembre.</h1>
-
-                    <p>El descuento es por solo un producto en promacion.</p>
-
+                    <h1>DESCUENTOS POR SEPTIEMBRE</h1>
+                    <p>El descuento es por solo un producto en promoción.</p>
                     <p><a class="btn btn-lg btn-primary" href="#">MÁS</a></p>
                 </div>
             </div>
@@ -47,7 +43,7 @@
 
             <div class="container">
                 <div class="carousel-caption text-end">
-                    <h1>Camisetas Jordan.</h1>
+                    <h1>CAMISETAS</h1>
                     <div id="seccion2">
                         <section class="seccion2">
                             <img src="~/img/camiseta1.jpg" />
@@ -56,8 +52,7 @@
                             <img src="~/img/camiseta4.jpg" />
                         </section>
                     </div>
-                    <p>Las camisetas Jordan son un clásico atemporal que nunca pasará de moda.</p>
-
+                    <p>Las camisetas son un clásico atemporal que nunca pasará de moda.</p>
                     <p><a class="btn btn-lg btn-primary" href="#">¡OBTENLO YA!</a></p>
                 </div>
             </div>
@@ -78,41 +73,53 @@
     <div class="row">
         <div class="col-lg-4">
             <div class="conter">
-                <img class="redondo" id="centro" src="~/img/rojo.jpg" />
+                <img class="redondo" id="centro" src="~/img/air-jordan-white.png" />
             </div>     
-            <h2>Zapatillas Jordans</h2>
-            <p>"Consigue los tenis Jordan que siempre has querido a un precio asequible.".</p>
-            <p><a class="btn btn-secondary" href="#">VER YA &raquo;</a></p>
+            <div class="container mt-4">
+                <h2>Zapatillas</h2>
+                <p>"Consigue los tenis que siempre has querido a un precio asequible.".</p>
+                <p><a class="btn btn-secondary" href="#">VER YA &raquo;</a></p>
+            </div>
         </div>
         <div class="col-lg-4">
             <div class="conter">
-                <img class="redondo" id="centro" src="~/img/salto.jpg" />
-
+                <img class="redondo" id="centro" src="~/img/cap-trend.png" />
             </div>
-            <h2>Gorros Jordan</h2>
-            <p>Los gorros Jordan son un accesorio atemporal que nunca pasará de moda.</p>
-            <p><a class="btn btn-secondary" href="#">VER YA &raquo;</a></p>
+            <div class="container mt-4">
+                <h2>Gorros</h2>
+                <p>Los gorros son un accesorio atemporal que nunca pasará de moda.</p>
+                <p><a class="btn btn-secondary" href="#">VER YA &raquo;</a></p>
+            </div>        
         </div>
         <div class="col-lg-4">
             <div class="conter">
                 <img class="redondo" id="centro" src="~/img/plomo.jpg" />
 
             </div>
-            <h2>Camisetas Jordan</h2>
-            <p>Las camisetas Jordan son el complemento perfecto para cualquier outfit.</p>
-            <p><a class="btn btn-secondary" href="#">VER YA &raquo;</a></p>
+            <div class="container mt-4">
+                <h2>Camisetas</h2>
+                <p>Las camisetas son el complemento perfecto para cualquier outfit.</p>
+                <p><a class="btn btn-secondary" href="#">VER YA &raquo;</a></p>
+            </div>
         </div>
     </div>
 
     <hr class="featurette-divider">
-    <div class="row featurette">
-        <div class="col-md-7">
-            <h2 class="featurette-heading">Un regalito. <span class="text-muted">Pequeño pero con estilo.</span></h2>
+    <div class="row featurette ">
+        <div class="container text-center">
+            <h2 class="featurette-heading">
+                Un regalo.
+                <span class="text-muted">Pequeño pero con estilo.</span>
+            </h2>
             <p class="lead">Por cada compra llevate un llavero de nuestra tienda.</p>
-        </div>
-        <div class="col-md-5">
-            <img src="~/img/llavero.jpg" />
+        </div>      
+        <div class="container text-center mt-4">
+            <img src="~/img/llavero.png"/>
         </div>
     </div>
     <hr class="featurette-divider">
 </div>
+
+<button id="scroll-to-top" class="btn btn-primary" style="display: none; position: fixed; bottom: 20px; right: 20px;">
+    <i class="fas fa-arrow-up"></i>
+</button>

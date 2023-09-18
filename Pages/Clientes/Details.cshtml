@@ -5,39 +5,47 @@
     ViewData["Title"] = "Details";
 }
 
-<h1>Details</h1>
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <div class="card rounded shadow">
+                <div class="card-header bg-dark text-light text-center">
+                    <h3 class="mb-0">
+                        <i class="fas fa-info-circle"></i> Datos Personales
+                    </h3>
+                </div>
+                <div class="card-body">
+                    <div>
+                        <h4>Cliente</h4>
+                        <hr />
+                        <dl class="row">
+                            <dd class="col-sm-12 mb-4">
+                                <b>Apellido Paterno:</b> @Model.Cliente.ApellidoP
+                            </dd>
 
-<div>
-    <h4>Cliente</h4>
-    <hr />
-    <dl class="row">
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Cliente.ApellidoP)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Cliente.ApellidoP)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Cliente.ApellidoM)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Cliente.ApellidoM)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Cliente.Nombre)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Cliente.Nombre)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Cliente.Nit)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Cliente.Nit)
-        </dd>
-    </dl>
-</div>
-<div>
-    <a asp-page="./Edit" asp-route-id="@Model.Cliente?.ClienteId">Edit</a> |
-    <a asp-page="./Index">Back to List</a>
+                            <dd class="col-sm-12 mb-4">
+                                <b>Apellido Materno:</b> @Model.Cliente.ApellidoM
+                            </dd>
+
+                            <dd class="col-sm-12 mb-4">
+                                <b>Nombre:</b> @Model.Cliente.Nombre
+                            </dd>
+
+                            <dd class="col-sm-12 mb-4">
+                                <b>NIT:</b> @Model.Cliente.Nit
+                            </dd>
+                        </dl>
+                    </div>
+                </div>
+                <div class="card-footer text-center">
+                    <a asp-page="./Edit" asp-route-id="@Model.Cliente?.ClienteId" class="btn btn-warning">
+                        <i class="fas fa-edit"></i> Editar
+                    </a>
+                    <a asp-page="./Index" class="btn btn-secondary">
+                        <i class="fas fa-arrow-left"></i> Volver a la Lista
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
