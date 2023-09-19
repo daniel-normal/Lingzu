@@ -38,7 +38,7 @@ Sitio Web de Registro de Ventas.
 - Gabriel Racua
 
 ## 🚀 Acerca de Lingzu
-Somos un equipo...
+Somos un equipo... :) 
 
 ##  Diagrama de Base de Datos
 
@@ -46,11 +46,11 @@ Somos un equipo...
 ## 🔗 Enlaces
 #### *Brayan Chavez* 🤔
 [![github](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)](https://github.com/elchavez14)  
-#### *Bryan Espejo*  👯‍♀️
+#### *Bryan Espejo*  👩‍💻
 [![github](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)](https://github.com/BryanAlexeiEspejo)
 #### *José Paredes*  ⚡️
 [![github](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)](https://github.com/joseandrespg0310)  
-#### *Gabriel Racua*  👩‍💻
+#### *Gabriel Racua*  👯‍♀
 [![github](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)](https://github.com/DcGeminis)  
 
 ## Capturas de Pantalla
@@ -85,8 +85,7 @@ Somos un equipo...
 ## Detalles de la venta
 ![MicrosoftTeams-image (2)](https://github.com/daniel-normal/Lingzu/assets/126890762/41840f91-b569-432c-8f65-9825f69dfa20)
 
-
-## Logo
+## Logo de la empresa
 ![MicrosoftTeams-image (2)](https://github.com/daniel-normal/Lingzu/assets/126890762/f0516604-435a-45cc-b0a9-bd333210242e)
 
 ## Ejecutar Localmente
