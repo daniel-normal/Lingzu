@@ -56,37 +56,37 @@ Somos un equipo... :)
 
 ## Capturas de Pantalla
 
-## Menu principal 
+## Menú Principal 
 ![menu](https://github.com/daniel-normal/Lingzu/assets/126890762/6baa93ec-8952-485e-b16f-7119afbe6f65)
 ![menu 2](https://github.com/daniel-normal/Lingzu/assets/126890762/f9fc2fcd-274d-487c-a6ba-9818c05df102)
 ![menu 3](https://github.com/daniel-normal/Lingzu/assets/126890762/5d6dff51-1c42-4237-9a5c-5a2a222f9c5f)
 ![menu 5](https://github.com/daniel-normal/Lingzu/assets/126890762/5eef4a10-a1be-4875-ac31-3a9488a23399)
 
 
-## Pagina productos
+## Página Productos
 ![Productos](https://github.com/daniel-normal/Lingzu/assets/126890762/e5e8acef-32b3-4976-8f11-6d8fcc9014e6)
 
-## Pagina clientes
+## Página Clientes
 ![clientes](https://github.com/daniel-normal/Lingzu/assets/126890762/7eb95152-74cc-45d6-9c00-7e29ba63a91f)
 
-## Pagina ventas
+## Página Ventas
 ![Ventas](https://github.com/daniel-normal/Lingzu/assets/126890762/79e94a14-8a5d-4fbb-afb1-ea4bef4a569d)
 
-## Pagina contactos 
+## Página Contactos 
 ![Cobntactos](https://github.com/daniel-normal/Lingzu/assets/126890762/985f8d06-0e12-416c-871d-8cf4dd298a29)
 
 ![Contactos 2](https://github.com/daniel-normal/Lingzu/assets/126890762/98b7e9dd-472d-4457-969e-8ad0d70766a0)
 
-## Pagina Comprar productos - Datos personales 
+## Página Comprar Productos - Datos personales 
 ![compra](https://github.com/daniel-normal/Lingzu/assets/126890762/1d502f2d-d631-4c05-bbf8-dac1a7838539)
 
-## Agregar producto
+## Agregar Producto
 ![agregar product](https://github.com/daniel-normal/Lingzu/assets/126890762/387c9f8b-0d01-4e32-8cff-86223d1366d2)
 
-## Detalles de la venta
+## Detalles de la Venta
 ![MicrosoftTeams-image (2)](https://github.com/daniel-normal/Lingzu/assets/126890762/41840f91-b569-432c-8f65-9825f69dfa20)
 
-## Logo de la empresa
+## Logo
 ![MicrosoftTeams-image (2)](https://github.com/daniel-normal/Lingzu/assets/126890762/f0516604-435a-45cc-b0a9-bd333210242e)
 
 ## Ejecutar Localmente
@@ -94,7 +94,7 @@ Somos un equipo... :)
 Clonar el proyecto:
 *https://github.com/daniel-normal/Lingzu.git*
 
-En terminal ---> Developer Command Prompt
+Developer Command Prompt
 ```bash
 dotnet tool install --global dotnet-ef
 ```
