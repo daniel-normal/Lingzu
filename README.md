@@ -42,7 +42,6 @@ Somos un equipo...
 
 ##  Diagrama de Base de Datos
 
-##  Diagrama de Clases
 
 ## 🔗 Enlaces
 #### *Brayan Chavez* 🤔
@@ -56,10 +55,33 @@ Somos un equipo...
 
 ## Capturas de Pantalla
 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+## Menu principal 
+![menu](https://github.com/daniel-normal/Lingzu/assets/126890762/6baa93ec-8952-485e-b16f-7119afbe6f65)
+
+## Pagina productos
+![Productos](https://github.com/daniel-normal/Lingzu/assets/126890762/e5e8acef-32b3-4976-8f11-6d8fcc9014e6)
+
+## Pagina clientes
+![clientes](https://github.com/daniel-normal/Lingzu/assets/126890762/7eb95152-74cc-45d6-9c00-7e29ba63a91f)
+
+## Pagina ventas
+![Ventas](https://github.com/daniel-normal/Lingzu/assets/126890762/79e94a14-8a5d-4fbb-afb1-ea4bef4a569d)
+
+## Pagina contactos
+![Cobntactos](https://github.com/daniel-normal/Lingzu/assets/126890762/985f8d06-0e12-416c-871d-8cf4dd298a29)
+
+## Pagina Comprar productos - Datos personales 
+![compra](https://github.com/daniel-normal/Lingzu/assets/126890762/1d502f2d-d631-4c05-bbf8-dac1a7838539)
+
+## Agregar producto
+![agregar product](https://github.com/daniel-normal/Lingzu/assets/126890762/387c9f8b-0d01-4e32-8cff-86223d1366d2)
+
+## Detalles de la venta
+![MicrosoftTeams-image (2)](https://github.com/daniel-normal/Lingzu/assets/126890762/41840f91-b569-432c-8f65-9825f69dfa20)
+
 
 ## Logo
-![Logo](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/th5xamgrr6se0x5ro4g6.png)
+![MicrosoftTeams-image (2)](https://github.com/daniel-normal/Lingzu/assets/126890762/f0516604-435a-45cc-b0a9-bd333210242e)
 
 ## Ejecutar Localmente
 
