@@ -57,6 +57,10 @@ Somos un equipo...
 
 ## Menu principal 
 ![menu](https://github.com/daniel-normal/Lingzu/assets/126890762/6baa93ec-8952-485e-b16f-7119afbe6f65)
+![menu 2](https://github.com/daniel-normal/Lingzu/assets/126890762/f9fc2fcd-274d-487c-a6ba-9818c05df102)
+![menu 3](https://github.com/daniel-normal/Lingzu/assets/126890762/5d6dff51-1c42-4237-9a5c-5a2a222f9c5f)
+![menu 5](https://github.com/daniel-normal/Lingzu/assets/126890762/5eef4a10-a1be-4875-ac31-3a9488a23399)
+
 
 ## Pagina productos
 ![Productos](https://github.com/daniel-normal/Lingzu/assets/126890762/e5e8acef-32b3-4976-8f11-6d8fcc9014e6)
@@ -67,8 +71,10 @@ Somos un equipo...
 ## Pagina ventas
 ![Ventas](https://github.com/daniel-normal/Lingzu/assets/126890762/79e94a14-8a5d-4fbb-afb1-ea4bef4a569d)
 
-## Pagina contactos
+## Pagina contactos 
 ![Cobntactos](https://github.com/daniel-normal/Lingzu/assets/126890762/985f8d06-0e12-416c-871d-8cf4dd298a29)
+
+![Contactos 2](https://github.com/daniel-normal/Lingzu/assets/126890762/98b7e9dd-472d-4457-969e-8ad0d70766a0)
 
 ## Pagina Comprar productos - Datos personales 
 ![compra](https://github.com/daniel-normal/Lingzu/assets/126890762/1d502f2d-d631-4c05-bbf8-dac1a7838539)
