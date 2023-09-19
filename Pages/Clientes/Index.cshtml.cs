@@ -70,7 +70,5 @@ namespace Lingzu.Pages.Clientes
             ClienteP = await PaginatedList<Cliente>.CreateAsync(
                 clients.AsNoTracking(), pageIndex ?? 1, pageSize);
         }
-
-
     }
 }
