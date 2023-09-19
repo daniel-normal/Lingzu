@@ -32,11 +32,6 @@ namespace Lingzu.Pages.Ventas
         // To protect from overposting attacks, see https://aka.ms/RazorPagesCRUD
         public async Task<IActionResult> OnPostAsync()
         {
-          if (!ModelState.IsValid || _context.Venta == null || Venta == null)
-            {
-                return Page();
-            }
-
             _context.Venta.Add(Venta);
             await _context.SaveChangesAsync();
 

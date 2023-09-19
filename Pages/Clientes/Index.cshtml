@@ -13,6 +13,16 @@
             </h3>
         </div>
         <div class="card-body">
+            <form class="form-inline">
+                <div class="input-group">
+                    <input type="text" class="form-control" id="SearchString" placeholder="Buscar" asp-for="SearchString" />
+                    <div class="input-group-append">
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fas fa-search"></i> Filtrar
+                        </button>
+                    </div>
+                </div>
+            </form>
             <table class="table">
                 <thead class="thead-dark">
                     <tr>
@@ -32,33 +42,33 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach (var item in Model.Cliente)
-                    {
-                        <tr>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.ApellidoP)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.ApellidoM)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.Nombre)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.Nit)
-                            </td>
-                            <td>
-                                <a asp-page="./Edit" asp-route-id="@item.ClienteId" class="btn btn-sm btn-info"><i class="fas fa-edit"></i> Editar</a> |
-                                <a asp-page="./Details" asp-route-id="@item.ClienteId" class="btn btn-sm btn-primary"><i class="fas fa-info-circle"></i> Detalles</a> |
-                                <a asp-page="./Delete" asp-route-id="@item.ClienteId" class="btn btn-sm btn-danger"><i class="fas fa-trash"></i> Eliminar</a>
-                            </td>
-                        </tr>
-                    }
-                </tbody>
+    @foreach (var item in Model.ClienteP)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ApellidoP)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ApellidoM)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nit)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.ClienteId" class="btn btn-sm btn-info"><i class="fas fa-edit"></i> Editar</a> |
+                <a asp-page="./Details" asp-route-id="@item.ClienteId" class="btn btn-sm btn-primary"><i class="fas fa-info-circle"></i> Detalles</a> |
+                <a asp-page="./Delete" asp-route-id="@item.ClienteId" class="btn btn-sm btn-danger"><i class="fas fa-trash"></i> Eliminar</a>
+            </td>
+        </tr>
+    }
+</tbody>
             </table>
-            <a asp-page="Create" class="btn btn-primary w-100">
+            <!--<a asp-page="Create" class="btn btn-primary w-100">
                 <i class="fas fa-plus"></i> Nuevo
-            </a>
+            </a>-->
         </div>
     </div>
 

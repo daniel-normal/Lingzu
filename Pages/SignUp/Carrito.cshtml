@@ -27,7 +27,6 @@
                                     <option value="@producto.Value" data-precio="@producto.PrecioProducto">@producto.Text</option>
                                 }
                             </select>
-
                             <span asp-validation-for="ProductoIdSeleccionado" class="text-danger"></span>
                         </div>
 
@@ -47,11 +46,9 @@
                             <span asp-validation-for="Producto.CantidadProducto" class="text-danger"></span>
                         </div>
 
-                        <!-- Agregar campos ocultos -->
                         <input type="hidden" asp-for="IdClienteRegistrado" />
                         <input type="hidden" asp-for="Producto.NombreProducto" id="Producto_NombreProducto" />
                         <input type="hidden" asp-for="Producto.PrecioProducto" />
-                        <!-- El campo de cantidad del producto se enviará automáticamente -->
 
                         <div class="card-footer text-center mt-2">
                             <button type="submit" class="btn btn-secondary">
@@ -65,24 +62,7 @@
     </div>
 </div>
 
-<script>
-    function actualizarPrecio() {
-        var select = document.getElementById("ProductoIdSeleccionado");
-        var precio = select.options[select.selectedIndex].getAttribute("data-precio");
-        var nombreProducto = select.options[select.selectedIndex].text; // Obtén el nombre del producto seleccionado
-        var precioInput = document.getElementById("Producto_PrecioProducto");
-        var nombreProductoInput = document.getElementById("Producto_NombreProducto");
-
-        if (precioInput) {
-            precioInput.value = precio;
-        }
-
-        if (nombreProductoInput) {
-            nombreProductoInput.value = nombreProducto; // Actualiza el valor del campo oculto del nombre del producto
-        }
-    }
-</script>
-
+<script src="~/js/cart.js" asp-append-version="true"></script>
 
 @section Scripts {
     @{

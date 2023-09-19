@@ -1,17 +1,18 @@
-﻿using Lingzu.Models;
-using Microsoft.AspNetCore.Mvc.RazorPages;
+﻿using Lingzu.Data;
+using Lingzu.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace Lingzu.Pages.SignUp
 {
     public class CarritoModel : PageModel
     {
-        private readonly Lingzu.Data.LingzuContext _context;
+        private readonly LingzuContext _context;
 
-        public CarritoModel(Lingzu.Data.LingzuContext context)
+        public CarritoModel(LingzuContext context)
         {
             _context = context;
         }
@@ -23,11 +24,17 @@ namespace Lingzu.Pages.SignUp
             public int PrecioProducto { get; set; }
         }
 
+        #region Enviar propiedades por URL
         [BindProperty]
         public List<ProductoViewModel> Productos { get; set; } // Lista de productos
-
-        // Definir la propiedad IdClienteRegistrado
+        [BindProperty(SupportsGet = true)]
         public int IdClienteRegistrado { get; set; }
+        [BindProperty]
+        public int ProductoIdSeleccionado { get; set; } // Propiedad para almacenar el ID del producto seleccionado.
+        #endregion
+
+        [BindProperty]
+        public Producto Producto { get; set; } = new Producto();
 
         public IActionResult OnGet(int? ClienteId)
         {
@@ -48,19 +55,12 @@ namespace Lingzu.Pages.SignUp
             return Page();
         }
 
-
-        [BindProperty]
-        public int ProductoIdSeleccionado { get; set; } // Propiedad para almacenar el ID del producto seleccionado.
-
-        [BindProperty]
-        public Producto Producto { get; set; } = new Producto();
-
         public IActionResult OnPostAsync()
         {
             // Redirigir a la página "DetalleFactura" con valores en la URL
             return RedirectToPage("./DetalleFactura", new
             {
-                idClienteRegistrado = IdClienteRegistrado,
+                idClienteRegistrado = IdClienteRegistrado, // Utiliza idClienteRegistrado en minúscula
                 nombreProducto = Producto.NombreProducto,
                 precioProducto = Producto.PrecioProducto,
                 cantidadProducto = Producto.CantidadProducto

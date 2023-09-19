@@ -26,18 +26,17 @@
                         </dd>
 
                         <dt class="col-sm-2">
-                            @Html.DisplayNameFor(model => model.Venta.Cliente)
+                            Cliente:
                         </dt>
                         <dd class="col-sm-10">
-                            @Html.DisplayFor(model => model.Venta.Cliente.ApellidoM)
+                            @if (Model.Venta.Cliente != null)
+                            {
+                                @($"{Model.Venta.Cliente.ApellidoP}, {Model.Venta.Cliente.Nombre}")
+                            }
                         </dd>
-
                     </dl>
                 </div>
                 <div class="card-footer text-center">
-                    <a asp-page="./Edit" asp-route-id="@Model.Venta?.VentaId" class="btn btn-primary">
-                        <i class="fas fa-edit"></i> Editar
-                    </a>
                     <a asp-page="./Index" class="btn btn-secondary">
                         <i class="fas fa-arrow-left"></i> Volver a la Lista
                     </a>

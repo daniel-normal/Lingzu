@@ -39,10 +39,10 @@
                                 @Html.DisplayFor(modelItem => item.NumeroVenta)
                             </td>
                             <td>
-                                @Html.DisplayFor(modelItem => item.Cliente.ApellidoM)
+                                @($"{item.Cliente.ApellidoP}, {item.Cliente.Nombre}")
                             </td>
+
                             <td>
-                                <a asp-page="./Edit" asp-route-id="@item.VentaId" class="btn btn-sm btn-info"><i class="fas fa-edit"></i> Editar</a> |
                                 <a asp-page="./Details" asp-route-id="@item.VentaId" class="btn btn-sm btn-primary"><i class="fas fa-info-circle"></i> Detalles</a> |
                                 <a asp-page="./Delete" asp-route-id="@item.VentaId" class="btn btn-sm btn-danger"><i class="fas fa-trash"></i> Eliminar</a>
                             </td>
@@ -50,9 +50,9 @@
                     }
                 </tbody>
             </table>
-            <a asp-page="Create" class="btn btn-primary w-100">
+            <!--<a asp-page="Create" class="btn btn-primary w-100">
                 <i class="fas fa-plus"></i> Nuevo
-            </a>
+            </a>-->
         </div>
     </div>
 </div>

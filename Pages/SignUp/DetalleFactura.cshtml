@@ -6,7 +6,8 @@
 }
 
 <div class="container mt-5">
-    <div class="row">
+    <!-- Detalles del Producto -->
+    <div class="row mt-4">
         <div class="col-md-6 offset-md-3">
             <div class="card rounded shadow">
                 <div class="card-header bg-dark text-light text-center">
@@ -15,48 +16,44 @@
                     </h3>
                 </div>
                 <div class="card-body">
+                    <div class="form-group">
+                        <label class="font-weight-bold">Nombre del Producto</label>
+                        <input class="form-control" value="@Model.nombreProducto" readonly />
+                    </div>
+
+                    <div class="form-group">
+                        <label class="font-weight-bold">Precio Unitario del Producto</label>
+                        <input class="form-control" value="@Model.precioProducto" readonly />
+                    </div>
+
+                    <div class="form-group">
+                        <label class="font-weight-bold">Cantidad del Producto</label>
+                        <input class="form-control" value="@Model.cantidadProducto" readonly />
+                    </div>
+
+                    <div class="form-group">
+                        <label class="font-weight-bold">Total</label>
+                        <input class="form-control" value="@(Model.precioProducto * Model.cantidadProducto)" readonly />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <div class="card rounded shadow">             
+                <div class="card-body">
                     <form method="post">
                         <div asp-validation-summary="ModelOnly" class="text-danger"></div>
 
+                        <!-- Detalles de Facturación -->
                         <div class="form-group">
-                            <label class="font-weight-bold">ID del Cliente</label>
-                            <input class="form-control" value="@Model.idClienteRegistrado" readonly />
-                        </div>
-
-                        <div class="form-group">
-                            <label class="font-weight-bold">Nombre del Producto</label>
-                            <input class="form-control" value="@Model.nombreProducto" readonly />
-                        </div>
-
-                        <div class="form-group">
-                            <label class="font-weight-bold">Precio del Producto</label>
-                            <input class="form-control" value="@Model.precioProducto" readonly />
-                        </div>
-
-                        <div class="form-group">
-                            <label class="font-weight-bold">Cantidad del Producto</label>
-                            <input class="form-control" value="@Model.cantidadProducto" readonly />
-                        </div>
-
-                        <div class="form-group">
-                            <label asp-for="Venta.Fecha" class="font-weight-bold">Fecha</label>
-                            <input type="date" class="form-control" />
-                        </div>
-
-
-                        <div class="form-group">
-                            <label asp-for="Venta.NumeroVenta" class="font-weight-bold">Número de Factura</label>
-                            <input asp-for="Venta.NumeroVenta" class="form-control" />
-                            <span asp-validation-for="Venta.NumeroVenta" class="text-danger"></span>
+                            <input class="form-control" type="hidden" value="@Model.IdClienteRegistrado" readonly />
                         </div>
 
                         <div class="form-group mt-2">
                             <button type="submit" class="btn btn-success ml-2 w-100">Registrar Venta</button>
-                        </div>
-                        <div class="form-group mt-2">
-                            <a asp-page="Index" class="btn btn-secondary ml-2 w-100">
-                                <i class="fas fa-arrow-left"></i> Volver a la Lista
-                            </a>
                         </div>
                     </form>
                 </div>
