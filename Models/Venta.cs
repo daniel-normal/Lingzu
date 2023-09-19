@@ -9,18 +9,21 @@ namespace Lingzu.Models
 {
     public class Venta
     {
+        // Propiedad que representa el identificador único de la venta.
         public int VentaId { get; set; }
 
-        [Display(Name = "Fecha")]
-        [Required(ErrorMessage = "El campo {0} es obligatorio.")]
-        [DataType(DataType.Date)]
-        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
+        // Propiedad que representa la fecha de la venta con validaciones.
+        [Display(Name = "Fecha")] // Etiqueta para mostrar en la interfaz de usuario.
+        [Required(ErrorMessage = "El campo {0} es obligatorio.")] // Campo obligatorio.
+        [DataType(DataType.Date)] // Tipo de datos para la fecha.
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)] // Formato de visualización de la fecha.
         public DateTime Fecha { get; set; }
 
-        [Display(Name = "Número de Factura")]
-        [Required(ErrorMessage = "El campo {0} es obligatorio.")]
-        [StringLength(35, MinimumLength = 1, ErrorMessage = "La longitud del campo {0} debe estar entre {2} y {1} caracteres.")]
-        [RegularExpression(@"^\d+$", ErrorMessage = "El campo {0} debe contener solo números.")]
+        // Propiedad que representa el número de factura de la venta con validaciones.
+        [Display(Name = "Número de Factura")] // Etiqueta para mostrar en la interfaz de usuario.
+        [Required(ErrorMessage = "El campo {0} es obligatorio.")] // Campo obligatorio.
+        [StringLength(35, MinimumLength = 1, ErrorMessage = "La longitud del campo {0} debe estar entre {2} y {1} caracteres.")] // Longitud mínima y máxima permitida.
+        [RegularExpression(@"^\d+$", ErrorMessage = "El campo {0} debe contener solo números.")] // Expresión regular para validar que solo contiene dígitos.
         public string NumeroVenta { get; set; } = string.Empty;
 
         // Agregar propiedad de relación con Cliente

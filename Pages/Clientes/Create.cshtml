@@ -16,10 +16,15 @@
                 </div>
                 <div class="card-body">
                     <form method="post">
+                        <!-- Formulario para enviar datos mediante el método POST -->
                         <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <!-- Muestra los errores de validación del modelo -->
+                        <!-- Campo ApellidoP -->
                         <div class="form-group">
                             <label asp-for="Cliente.ApellidoP" class="font-weight-bold">Apellido Paterno</label>
+                            <!-- Crea un input para el campo ApellidoP del modelo Cliente -->
                             <input asp-for="Cliente.ApellidoP" class="form-control" />
+                            <!-- Muestra los mensajes de validación para el campo ApellidoP -->
                             <span asp-validation-for="Cliente.ApellidoP" class="text-danger"></span>
                         </div>
                         <div class="form-group">
