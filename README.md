@@ -40,9 +40,6 @@ Sitio Web de Registro de Ventas.
 ## 🚀 Acerca de Lingzu
 Somos un equipo... :) 
 
-##  Diagrama de Base de Datos
-![MicrosoftTeams-image (5)](https://github.com/daniel-normal/Lingzu/assets/126890762/10bd9a26-5e28-4759-bc56-15d6155a5a1e)
-
 
 ## 🔗 Enlaces
 #### *Brayan Chavez* 🤔
